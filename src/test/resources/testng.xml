@@ -2,8 +2,9 @@
 <suite name="Regression suite" parallel="true" thread-count="2">
     <test name="somkeTest">
         <classes>
-            <class name="tests.WorkBenchLogin"></class>
-            <class name="tests.WorkBenchLogin2"></class>
+            <class name="tests.TutorialVerify"></class>
+<!--            <class name="tests.WorkBenchLogin"></class>-->
+<!--            <class name="tests.WorkBenchLogin2"></class>-->
 <!--            <class name="tests.demandCentral"></class>-->
         </classes>
     </test>

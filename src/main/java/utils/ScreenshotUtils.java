@@ -13,14 +13,8 @@ import java.time.format.DateTimeFormatter;
 
 public class ScreenshotUtils {
 
-    private final WebDriver driver;
-
-    public ScreenshotUtils(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public Path capture(
-            String testName
+    public static Path captureToFile(
+            WebDriver driver, String testName
     ) {
 
         String timestamp =
@@ -66,5 +60,14 @@ public class ScreenshotUtils {
                     e
             );
         }
+    }
+    public static byte[] captureAsBytes(
+            WebDriver driver
+    ) {
+
+        return ((TakesScreenshot) driver)
+                .getScreenshotAs(
+                        OutputType.BYTES
+                );
     }
 }

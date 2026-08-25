@@ -1,10 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import utils.ActionsUtils;
-import utils.ElementActions;
-import utils.JavaScriptUtils;
-import utils.WaitUtils;
+import utils.*;
 
 
 public abstract class BasePage {
@@ -13,6 +10,7 @@ public abstract class BasePage {
     protected final ElementActions elementActions;
     protected final JavaScriptUtils javaScriptUtils;
     protected final ActionsUtils actionsUtils;
+//    protected final ScreenshotUtils screenshotUtils;
 
     public BasePage(WebDriver driver) {
         if (driver == null) {
@@ -25,5 +23,6 @@ public abstract class BasePage {
         this.elementActions = new ElementActions(driver);
         this.javaScriptUtils=new JavaScriptUtils(driver);
         this.actionsUtils=new ActionsUtils(driver);
+//        this.screenshotUtils=new ScreenshotUtils(driver);
     }
 }

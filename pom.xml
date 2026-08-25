@@ -12,7 +12,12 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <log4j.version>2.24.0</log4j.version>-->
+<!--        <properties>-->
+<!--            <allure.version>2.35.3</allure.version>>-->
+<!--        </properties>-->
     </properties>
+
 
     <build>
         <plugins>
@@ -41,6 +46,21 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>2.26.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-bom</artifactId>
+                <version>2.35.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -54,6 +74,21 @@
             <artifactId>testng</artifactId>
             <version>7.10.2</version>
         </dependency>
+        <!-- The API interface needed to write application logs -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        <!-- The implementation engine needed at runtime (no version tags required here) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+<!--            <scope>test</scope>-->
+        </dependency>
     </dependencies>
-
 </project>

@@ -1,13 +1,15 @@
 package tests;
 
 import base.BaseTest;
+import data.TestDataProvider;
 import driver.DriverManager;
 import io.qameta.allure.*;
-import org.testng.annotations.DataProvider;
+import model.EntryForm;
 import org.testng.annotations.Test;
 import pages.TutorialPracticePage;
 
 public class TutorialVerify extends BaseTest {
+
 
 
     @Epic("Tutorial verify")
@@ -15,18 +17,16 @@ public class TutorialVerify extends BaseTest {
     @Story("Tutorial Test Feature")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify Successful")
-
-    @Test(dataProvider = "homePage")
-    public void verifyTutorialVerify(String title){
+    @Test(dataProvider = "entryForm", dataProviderClass = TestDataProvider.class)
+    public void verifyTutorialVerify(EntryForm data){
         TutorialPracticePage tpp=new TutorialPracticePage(DriverManager.getDriver());
-        System.out.println(tpp.verifyTitlePage(title));
-    }
+        System.out.println(tpp.verifyTitlePage(data.getTitle()));
+//        tpp.getExpectedMessage();
+        tpp.enterFullName(data.getFullName());
+        tpp.enterEmail(data.getEmail());
+        tpp.enterCurrentAddress(data.getAddress());
+        tpp.enterPassword(data.getPassword());
+        tpp.clickSubmitButton();
 
-    @DataProvider(name = "homePage")
-    public Object[][] homePage() {
-        return new Object[][]{
-                {"Siva"},
-                {"Selenium - Automation Practice Form"}
-        };
     }
 }

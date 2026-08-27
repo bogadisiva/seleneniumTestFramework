@@ -8,15 +8,18 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
+
 
 public class BaseTest {
-    protected final Logger log4j=  LogManager.getLogger(getClass());
+    private final Logger log4j=  LogManager.getLogger(getClass());
 
     @BeforeMethod
     public void setUp() {
         DriverManager.setDriver(DriverFactory.createDriver());
         configureTimeouts();
         if (!ConfigManager.isHeadless()) {
+            DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ZERO);
             DriverManager.getDriver().manage().window().maximize();
         }
         DriverManager.getDriver().get(ConfigManager.getBaseUrl());

@@ -161,19 +161,16 @@ public final class ConfigManager {
             );
         }
     }
-    private static String firstNonBlank(
-            String... values
-    ) {
+    private static String firstNonBlank(String... values)
+    {
         for (String value : values) {
-            if (
-                    value != null
-                            && !value.isBlank()
-            ) {
+            if (value != null && !value.isBlank()) {
                 return value.trim();
             }
         }
-
         return null;
     }
-
+    public static String getApiBaseUrl(){
+        return getRequiredProperty("api.base.url","API_BASE_URL");
+    }
 }

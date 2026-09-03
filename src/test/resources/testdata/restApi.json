@@ -1,0 +1,78 @@
+[
+  {
+    "name": "OK",
+    "statusCode": 200
+  },
+  {
+    "name": "Created",
+    "statusCode": 201
+  },
+  {
+    "name": "Accepted",
+    "statusCode": 202
+  },
+  {
+    "name": "No Content",
+    "statusCode": 204
+  },
+  {
+    "name": "Moved Permanently",
+    "statusCode": 301
+  },
+  {
+    "name": "Found",
+    "statusCode": 302
+  },
+  {
+    "name": "Not Modified",
+    "statusCode": 304
+  },
+  {
+    "name": "Bad Request",
+    "statusCode": 400
+  },
+  {
+    "name": "Unauthorized",
+    "statusCode": 401
+  },
+  {
+    "name": "Forbidden",
+    "statusCode": 403
+  },
+  {
+    "name": "Not Found",
+    "statusCode": 404
+  },
+  {
+    "name": "Method Not Allowed",
+    "statusCode": 405
+  },
+  {
+    "name": "Conflict",
+    "statusCode": 409
+  },
+  {
+    "name": "Unprocessable Entity",
+    "statusCode": 422
+  },
+  {
+    "name": "Too Many Requests",
+    "statusCode": 429
+  },
+  {
+    "name": "Internal Server Error",
+    "statusCode": 500
+  },
+  {
+    "name": "Bad Gateway",
+    "statusCode": 502
+  },
+  {
+    "name": "Service Unavailable",
+    "statusCode": 503
+  },
+  {
+    "name": "Gateway Timeout",
+    "statusCode": 504
+  }
+]
